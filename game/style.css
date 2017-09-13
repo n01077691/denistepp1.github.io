@@ -1,0 +1,14 @@
+﻿body {
+	background-color: grey;
+}
+
+table {
+	border-color: #00FFFF;
+}
+
+.hit {
+	background: url("ship.png") no-repeat center center;
+}
+.miss {
+	background: url("miss.png") no-repeat center center;
+}
