@@ -3,7 +3,7 @@
  * page is loaded, three ships are randomly placed on the board, either 
  * vertically or horizontally. The ships do not overlap.
  * 
- * @authors Roberto Loja, Denis Stepanov
+ * @authors  Denis Stepanov
  * @version March 25th, 2016.
  */
 
@@ -23,18 +23,6 @@ var ships = 0;
 var hits = 0;
 var remainingSquares = 0;
 
-message();
-function message(){
-confirm("Welcome to Batlleship!\n\n"+
-      "Rules And Descrption:\n\n"+
-      "PRESSING <ENTER> KEY WILL RESTART THE PAGE\n\n"+
-      "1)\tShips are randomly placed by computer on the grid\n"+
-      "2)\tThere are 3 ships with different sizes. You have to destroy them all!\n"+
-      "3)\tTo hit a ship type one letter (A-G) and one number (0-6) in the box and bottom right corner\n"+
-      "4)\tAfter you hit the ship, the space where you hit changes with appropriate picture, same goes with misses\n"+
-      "5)\tAt the end of the game your accuracy will be shown\n\n"+
-      "READY! AIM! FIRE!");
-}
 placeShip(3);
 console.table(area);
 document.getElementById('fireButton').onclick = fire;
