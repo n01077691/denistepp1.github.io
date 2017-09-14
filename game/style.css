@@ -1,9 +1,10 @@
 ﻿body {
-	background-color: red;
+	background-color: #585858;
 }
 
 table {
-	border-color: #00FFFF;
+	border: 5px solid black;
+	
 }
 
 .hit {
