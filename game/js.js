@@ -130,7 +130,6 @@ function fire() {
       }
       shotCount++;
     } else {
-      window.alert('Must enter a valid coordinate.');
     }
   }
     
