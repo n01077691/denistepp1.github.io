@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<table>
+<table id="main">
 	<tr>
 		<td id="00"></td> 
 		<td id="01"></td> 
@@ -72,6 +72,14 @@
 	</tr>
 </table>
 <!--<script src="js.js">-->
-</script>
+
+<script language="javascript">
+        function autoResizeDiv()
+        {
+    		document.getElementById('main').style.height = window.innerHeight +'px';
+        }
+        window.onresize = autoResizeDiv;
+        autoResizeDiv();
+    </script>
 </body>
 </html>
