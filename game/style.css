@@ -8,6 +8,14 @@ table {
 	width: 80%;
 }
 
+td{
+	border: 5px solid #00FFFF;
+}
+
+tr{
+	border: 5px solid #00FFFF;
+}
+
 .hit {
 	background: url("ship.png") no-repeat center center;
 }
