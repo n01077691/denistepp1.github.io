@@ -3,7 +3,7 @@
  * page is loaded, three ships are randomly placed on the board, either 
  * vertically or horizontally. The ships do not overlap.
  * 
- * @authors  Denis Stepanov
+ * @author Denis Stepanov
  * @version March 25th, 2016.
  */
 
@@ -26,6 +26,10 @@ var remainingSquares = 0;
 placeShip(3);
 console.table(area);
 //document.getElementById('fireButton').onclick = fire;
+
+//to do: check clicked cell
+
+
 
 /**
  * Places ships randomly on the board.
@@ -110,7 +114,7 @@ function verticalFree(startCoordinate, length) {
 
 /**
  * Takes input from webpage as the coordinate to fire on.
- */
+ 
 function fire() {
   
     
@@ -133,21 +137,7 @@ function fire() {
       finish(shotCount, hits);
   }
 }
-
-
-/**
- * Checks if the input is valid.
- * @param {String} input The input to be checked.
- * @return {Boolean} True if valid, false otherwise.
- */
-function validInput(input) {
-  var ret = false;
-  
-  if (letters.indexOf(input[0].toLowerCase()) !== -1 && (input[1] >= 0 && input[1] <= 6)) {
-    ret = true;
-  }
-  return ret;
-}
+*/
 
 
 /**
@@ -180,11 +170,11 @@ function hit(coordinate) {
  * Function to finish the game and count accuracy
  * @param {Number} shots Tries taken to sunk all the ships
  * @param {Number} hits  Amount of squares hit where ships were placed
- */
+ 
 function finish(shots, hits) {
   alert("Congratulations! You destroyed all ships");
   accuracy = (hits / shots) * 100;
   alert("Your took " + shots + " shots and your accuracy is " + 
   accuracy.toFixed(2) + " %\nPush ok to start again!");
   location.reload();
-}
+}*/
