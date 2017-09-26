@@ -35,8 +35,6 @@ td:hover{
 
 #rules 
 {
-	height: 5%;
-	width: 5%;
 	left: 25%;
 	top: 90%;
 	position: absolute;
@@ -62,8 +60,6 @@ td:hover{
 }
 
 #restart{
-	height: 5%;
-	width: 5%;
 	top: 90%;
 	left: 50%;
 	position: absolute;
