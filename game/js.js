@@ -112,10 +112,7 @@ function verticalFree(startCoordinate, length) {
  * Takes input from webpage as the coordinate to fire on.
  */
 function fire() {
-  var inputBox = document.getElementById('guessInput');
   
-  if (inputBox.value.length > 1) {
-    var input = inputBox.value.split('');
     
     if (validInput(input)) {
       var inputString = letters.indexOf(input[0].toLowerCase()) + input[1];
@@ -131,7 +128,6 @@ function fire() {
       shotCount++;
     } else {
     }
-  }
     
   if (!remainingSquares) {
       finish(shotCount, hits);
