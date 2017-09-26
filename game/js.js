@@ -25,7 +25,7 @@ var remainingSquares = 0;
 
 placeShip(3);
 console.table(area);
-document.getElementById('fireButton').onclick = fire;
+//document.getElementById('fireButton').onclick = fire;
 
 /**
  * Places ships randomly on the board.
