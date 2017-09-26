@@ -32,3 +32,18 @@ td:hover{
 .miss {
 	background: url("miss.png") no-repeat center center;
 }
+
+#rules 
+{
+	height: 5%;
+	width: 5%;
+	bottom: 2%
+	left: 25%;
+}
+
+#restart{
+	height: 5%;
+	width: 5%;
+	bottom: 2%;
+	left: 50%;
+}
