@@ -6,6 +6,8 @@ body {
 }
 
 table {
+	left: 25%;
+	top:2%;
 	border: 5px solid #00FFFF;
 	height: 95%;
 	width: 50%;
