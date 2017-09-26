@@ -35,8 +35,10 @@ td:hover{
 
 #rules 
 {
-	left: 25%;
+	left: 30%;
 	top: 90%;
+	padding-left: 10px;
+	padding-right: 10px;
 	position: absolute;
   	background: #33d4d4;
   	background-image: -webkit-linear-gradient(top, #33d4d4, #2980b9);
