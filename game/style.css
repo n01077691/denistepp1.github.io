@@ -1,19 +1,14 @@
-﻿html{
-	height: 100%;
-}
-
+﻿
 body {
-	min-height: 100vh;
 	background-color: #585858;
-	height: auto;
+	
 }
 
 table {
-	margin-top: 15%;
-	margin-left:25%;
 	border: 5px solid #00FFFF;
 	height: 70%;
 	width: 50%;
+	position: absolute;
 }
 td{
 	border: 5px solid #00FFFF;
