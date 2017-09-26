@@ -9,11 +9,11 @@ table {
 	left: 25%;
 	top:2%;
 	border: 5px solid #00FFFF;
-	height: 95%;
+	height: 85%;
 	width: 50%;
 	position: absolute;
 	border-collapse: collapse;
-	-webkit-box-shadow: 0 10 20px #00ffff;
+-webkit-box-shadow: 0 10 20px #00ffff;
 	box-shadow: 0 10 20px #00ffff;
 }
 
