@@ -37,8 +37,6 @@ td:hover{
 {
 	left: 30%;
 	top: 90%;
-	padding-left: 10px;
-	padding-right: 10px;
 	position: absolute;
   	background: #33d4d4;
   	background-image: -webkit-linear-gradient(top, #33d4d4, #2980b9);
@@ -63,7 +61,7 @@ td:hover{
 
 #restart{
 	top: 90%;
-	left: 50%;
+	left: 75%;
 	position: absolute;
   	background: #33d4d4;
   	background-image: -webkit-linear-gradient(top, #33d4d4, #2980b9);
