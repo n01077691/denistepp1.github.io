@@ -8,6 +8,11 @@
 	overflow: hidden;
 }
 
+body{
+	height: 100vh;
+	background-color: #585858;
+}
+
 table {
 	margin-top: 15%;
 	margin-left:25%;
