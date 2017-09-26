@@ -10,6 +10,7 @@ table {
 	height: 100%;
 	width: 50%;
 	position: absolute;
+	border-collapse: collapse;
 }
 td{
 	border: 5px solid #00FFFF;
