@@ -37,13 +37,13 @@ td:hover{
 {
 	height: 5%;
 	width: 5%;
-	bottom: 2%
 	left: 25%;
+	top: 90%;
 }
 
 #restart{
 	height: 5%;
 	width: 5%;
-	bottom: 2%;
+	top: 90;
 	left: 50%;
 }
