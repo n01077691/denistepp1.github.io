@@ -39,6 +39,7 @@ td:hover{
 	width: 5%;
 	left: 25%;
 	top: 90%;
+	position: absolute;
 }
 
 #restart{
@@ -46,4 +47,5 @@ td:hover{
 	width: 5%;
 	top: 90;
 	left: 50%;
+	position: absolute;
 }
