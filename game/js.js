@@ -37,9 +37,8 @@ console.table(area);
  */
 function place(event){
 	hit = "hit";
-	x = event.srcElement.classList.length;
-	console.log(x);
 	event.srsElelment.classList.add(hit);
+	console.log(6);
 }
 
 function placeShip(numShips) {
