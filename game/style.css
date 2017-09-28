@@ -33,6 +33,10 @@ td:hover{
 	background: url("miss.png") no-repeat center center;
 }
 
+.empty{
+	color:blue;
+}
+
 #rules 
 {
 	left: 35%;
