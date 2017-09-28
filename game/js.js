@@ -35,6 +35,10 @@ console.table(area);
  * Places ships randomly on the board.
  * @param {Number} numShips The number of ships to place.
  */
+function checkId(){
+	concole.log(event.srcElement.id);
+}
+
 function placeShip(numShips) {
   
   while (ships < numShips) {
