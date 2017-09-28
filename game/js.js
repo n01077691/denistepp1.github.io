@@ -36,7 +36,8 @@ console.table(area);
  * @param {Number} numShips The number of ships to place.
  */
 function checkId(){
-	console.log(event.srcElement.id);
+	console.log(6);
+	console.log(10);
 }
 
 function placeShip(numShips) {
