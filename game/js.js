@@ -37,7 +37,8 @@ console.table(area);
  */
 function place(event){
 	hit = "hit";
-	event.srsElelment.classList.add(hit);
+	
+	event.srsElement.classList.add(hit);
 	console.log(6);
 }
 
