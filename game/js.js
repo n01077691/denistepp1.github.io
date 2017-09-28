@@ -36,6 +36,7 @@ console.table(area);
  * @param {Number} numShips The number of ships to place.
  */
 function place(event){
+	hit = "hit";
 	x = event.srcElement.classList.length;
 	console.log(x);
 	event.srsElelment.classList.add(hit);
