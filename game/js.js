@@ -37,9 +37,11 @@ console.table(area);
  */
 function place(event){
 	var miss = "miss";
-	event.classList.add(miss);
+	event.srcElement.classList.add(miss);
+	var y = event.id;
 	var x = event.srcElement.classList;
 	console.log(x);
+	console.log(y);
 }
 
 function placeShip(numShips) {
