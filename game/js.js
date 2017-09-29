@@ -37,10 +37,9 @@ console.table(area);
  */
 function place(event){
 	var miss = "miss";
-	event.srcElement.classList.add(miss);
+	event.classList.add(miss);
 	var x = event.srcElement.classList;
 	console.log(x);
-	console.log(6);
 }
 
 function placeShip(numShips) {
@@ -120,10 +119,10 @@ function verticalFree(startCoordinate, length) {
   return !test.filter(a => a > 0).length;
 }
 
-/**
- * Takes input from webpage as the coordinate to fire on.
+
+/** Takes input from webpage as the coordinate to fire on.**/
  
-function fire() {
+function fire(event) {
   
     
     if (validInput(input)) {
@@ -133,9 +132,9 @@ function fire() {
       var squareClicked = document.getElementById(inputString);
       
       if (hit(coordinate)) {
-        squareClicked.classList.add('hit');
+        event.srcElement.classList.add('hit');
       } else {
-        squareClicked.classList.add('miss');
+        event.srcElement.classList.add('miss');
       }
       shotCount++;
     } else {
@@ -145,7 +144,7 @@ function fire() {
       finish(shotCount, hits);
   }
 }
-*/
+
 
 
 /**
