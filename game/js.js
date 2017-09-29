@@ -38,6 +38,8 @@ console.table(area);
 function place(event){
 	var miss = "miss";
 	event.srcElement.classList.add(miss);
+	var x = event.srcElement.classList;
+	console.log(x);
 	console.log(6);
 }
 
