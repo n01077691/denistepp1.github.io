@@ -41,7 +41,9 @@ function place(event){
 	event.srcElement.classList.add(miss);
 	var x = event.srcElement.classList;
 	console.log(x);
-	console.log(event);
+	
+	var parentid = event.targret.parentElemenent;
+	console.log(parentid);
 }
 
 function placeShip(numShips) {
