@@ -35,16 +35,6 @@ console.table(area);
  * Places ships randomly on the board.
  * @param {Number} numShips The number of ships to place.
  */
-function place(event){
-	console.log(3);
-	var miss = "miss";
-	event.srcElement.classList.add(miss);
-	var x = event.srcElement.classList;
-	console.log(x);
-	
-	var parentid = event.targret.parentElemenent;
-	console.log(parentid);
-}
 
 function placeShip(numShips) {
   
@@ -127,22 +117,19 @@ function verticalFree(startCoordinate, length) {
 /** Takes input from webpage as the coordinate to fire on.**/
  
 function fire(event) {
+    cell = event;
+    cellClicked = event.currentTarget.id;
   
+
+      var coordinate = cellClicked.split('');
     
-    if (validInput(input)) {
-      var inputString = letters.indexOf(input[0].toLowerCase()) + input[1];
-      var coordinate = inputString.split('');
-      
-      var squareClicked = document.getElementById(inputString);
-      
-      if (hit(coordinate)) {
-        event.srcElement.classList.add('hit');
+      if (hit(coordinate, cell)) {
+        cell.srcElement.classList.add('hit');
       } else {
-        event.srcElement.classList.add('miss');
+        cell.srcElement.classList.add('miss');
       }
       shotCount++;
-    } else {
-    }
+    
     
   if (!remainingSquares) {
       finish(shotCount, hits);
@@ -156,23 +143,21 @@ function fire(event) {
  * @param {Number[]} coordinate The coordinates on 'area' to check.
  * @return {Boolean} True if hit, false otherwise.
  */
-function hit(coordinate) {
+function hit(coordinate, cell) {
   var returnVal = false;
+    console.log(cell.currentTarget);
   
   if (area[coordinate[0]][coordinate[1]] > 1) {
     returnVal = true;
 
-    alert('You hit a ship!');
     area[coordinate[0]][coordinate[1]] = -1;
     hits++;
     remainingSquares--;
   
-  } else if (area[coordinate[0]][coordinate[1]] < 0) {
+  } else if(area[coordinate[0]][coordinate[1]] < 0) {
+    cell.innerHTML = "hello world";
     returnVal = true;
-    alert('This was already hit.');
-  } else {
-    alert('Miss!');
-  }
+  } 
   return returnVal;
 }
 
@@ -181,11 +166,32 @@ function hit(coordinate) {
  * Function to finish the game and count accuracy
  * @param {Number} shots Tries taken to sunk all the ships
  * @param {Number} hits  Amount of squares hit where ships were placed
+*/
  
-function finish(shots, hits) {
-  alert("Congratulations! You destroyed all ships");
-  accuracy = (hits / shots) * 100;
-  alert("Your took " + shots + " shots and your accuracy is " + 
-  accuracy.toFixed(2) + " %\nPush ok to start again!");
-  location.reload();
-}*/
+function finish(shots, hits) { 
+    //set accuracy 
+    accuracy = (hits / shots) * 100;
+    
+    //get navigation elements
+    document.getElementById("info").classList.add("finish_class");
+    var nav_finish = document.getElementById("myNav");
+    var nav_info = document.getElementById("info");
+
+    //close button    
+    var close_btn = document.getElementById("closebtn");
+    close_btn.onclick = function end(){location.reload()};
+    close_btn.innerHTML = "Restart!";
+
+    //get color changing elements
+    document.getElementById("accuracy_html").classList.add("finish_class");
+    document.getElementById("shots_html").classList.add("finish_class");
+    document.getElementById("accuracy_html").value = accuracy.toFixed(2);
+    document.getElementById("shots_html").value = shots;
+
+    
+    document.getElementById("info").classList.remove("finish_class");
+    nav_info.innerHTML = "Congratulations! You have destroyed all the ships!\n You took " + document.getElementById("shots_html").value + " shots and your accuracy is " + accuracy_html.value + "%\nPush restart to play again!";
+
+    nav_finish.style.height = "100%";
+    
+}
