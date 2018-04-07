@@ -2,50 +2,63 @@ package wine;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public final class DataSet {
 
     private DataSample[] dataArray;
     public int samples;
-    public String[] sampleArr = null;
-    public int label;
+    public String[] sampleArr;
+    public int label_s,i;
+    public double[] attr;
+    String taskOutputString;
     
     public DataSet(String filename)throws FileNotFoundException{
-        System.out.println("Calculating number of lines...");
-        getDataSetSize(filename);
-        DataSample[] dataArray = new DataSample[samples];
-        double[] attributes=new double[samples]; //to convert string array into doubles array
-
-        for(int i=0;i<samples;i++){
-            String[] token=sampleArr[i].split(","); //this is to split string by ','
-            label=Integer.parseInt(token[0]); //split label is token[0]
-
-            for(int j=1;j<token.length;j++)
-            attributes[j-1]=Double.parseDouble(token[j]); //token[1] to token[13] are attributes, this will convert string into //double
-
-            dataArray[i]=new DataSample(label,attributes); 
+        File file = new File(filename);
+        i=0;
+        label_s = 0;
+        this.dataArray = new DataSample[this.getDataSetSize(filename)];
+        
+        Scanner input = new Scanner(file);
+        
+        while(input.hasNextLine()){
+            sampleArr = ((input.next()).split(","));
+            this.attr = new double[sampleArr.length-1];
+            label_s = Integer.parseInt(sampleArr[0]);
+            
+            for(int j = 0; j<(sampleArr.length-1);j++){
+                attr[j] = Double.parseDouble(sampleArr[j+1]);
             }
-        System.out.println(dataArray[0]);
+            DataSample data = new DataSample(label_s,attr);
+            
+            dataArray[i] = data;
+            i++;
+        }
+        this.taskOutputString = 
+                "Mean of class 1: " + Arrays.toString(this.getMean(1)) + "\n"
+                +"Std of class 1: " + Arrays.toString(this.getStd(1)) + "\n"
+               + "Mean of class 2: " + Arrays.toString(this.getMean(2)) + "\n"
+               + "Std of class 2: " + Arrays.toString(this.getStd(2)) + "\n"
+               + "Mean of class 3: " + Arrays.toString(this.getMean(3)) + "\n"
+               +"Std of class 3: " + Arrays.toString(this.getStd(3)) + "\n";
     }
     
     public int getDataSetSize(String filename) throws FileNotFoundException {
-        samples=0;
         File file = new File(filename);
-        try (Scanner input = new Scanner(file)) {
-            while (input.hasNextLine()){
-                sampleArr[samples]=input.nextLine(); //sampleArr , has each line read from file
-                samples++;
+        try(Scanner input = new Scanner(file)){
+            samples = 0;
+            while(input.hasNextLine()){
+                    input.nextLine();
+                    samples++;
             }
             input.close();
-            System.out.println("done ");
         }
-        return samples;
+    return samples;
     }
     
     public double[] getMean(int label){
-        double x[] = null;
-        return x;
+        return null;
     }
     
     public double[] getStd(int label){
