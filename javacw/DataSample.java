@@ -1,12 +1,22 @@
 package wine;
 
-class DataSample {
+final class DataSample {
     private int label;
     private int numOfAttributes;
     private double[] attributes;
+    public double dist;
     
     public DataSample(int lb, double[] atr){
+        setLabel(lb);
         
+        for(int i = 0; i<atr.length;i++){
+            numOfAttributes++;
+        }
+        
+        this.attributes = new double[numOfAttributes];
+        for(int i = 0; i<atr.length;i++){
+            attributes[i] = atr[i];
+        }
     }
     
     public void setLabel(int lb){
@@ -26,6 +36,12 @@ class DataSample {
     }
     
     public double distance(DataSample dat){
-        return 0;
+        dist = 0;
+        for(int i=0; i<numOfAttributes;i++){
+            dist = dist + Math.pow((this.attributes[i] - dat.attributes[i]),2);
+        }
+        dist = Math.pow(dist, 0.5);
+        
+        return dist;
     }
 }
